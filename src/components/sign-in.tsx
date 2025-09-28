@@ -2,7 +2,6 @@ import { useForm } from 'react-hook-form';
 import z from 'zod';
 import { auth } from '../lib/auth';
 
-// Definir esquema de validação
 const signSchema = z.object({
   email: z.email({ message: 'Email inválido' }),
   password: z.string().min(6, { message: 'Senha deve ter pelo menos 6 caracteres' }),
