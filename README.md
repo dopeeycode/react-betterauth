@@ -1,73 +1,25 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + Better Auth
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação moderna que combina React com TypeScript, usando Vite para um ambiente de desenvolvimento ultrarrápido. Implementamos uma autenticação segura e eficiente com o sistema *better-auth* integrado a um backend próprio.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
+- **React** com TypeScript
+- **Vite** para ambiente de desenvolvimento rápido
+- **Tailwind CSS** para estilos modernos e responsivos
+- **Better-Auth** para gerenciamento de autenticação
+- Backend personalizado para controle total
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Conexão com o Backend e o Sistema Better-Auth
+Este projeto se comunica com um backend customizado, onde o sistema *better-auth* gerencia o ciclo de vida de sessões e autenticação dos usuários. Essa conexão é feita via API REST, garantindo segurança e desempenho na troca de informações.
 
-## React Compiler
+## Como Configurar
+1. Clone este repositório.
+2. Instale as dependências com `bun install`.
+3. Execute o projeto com `bun dev`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funcionalidades
+- Formulários de login e cadastro.
+- Validação simples de formulários utilizando *Zod*.
+- Interface estilizada com Tailwind CSS.
+- Integração segura com o backend usando *better-auth*.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
